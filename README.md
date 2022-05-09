@@ -44,4 +44,6 @@ $ rails server
 * **password** : password
 * 
 2022.5.9 git init OK
+2022.5.9 Git(SSHでpush)
+
 
