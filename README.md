@@ -42,3 +42,6 @@ $ rails server
 
 * **email** : sample@email.com
 * **password** : password
+* 
+2022.5.9 git init OK
+
