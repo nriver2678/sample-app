@@ -1,12 +1,36 @@
 <% provide(:title, "Top") %>
 <div class="jumbotron">
-  <h1>サンプルアプリ</h1>
-  <p>
-    皆さんの手で、この最低限の土台となるアプリケーションから<br>
-    タスク管理機能を持ったアプリケーションへと作り替えていきましょう！
-  </p>
+ <header class="nav navbar navbar-fixed-top navbar-default" id="header">
+  <div class="container">
+    <%= link_to "Task App", root_path, id:"logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "トップ", root_path, class:"header-list" %></li>
+        <% if logged_in? %>
+          <li><%= link_to "Users", '#', class:"header-list" %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle header-list" data-toggle="dropdown">
+              Account <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu navbar-default">
+              <li><%= link_to "Show", current_user %></li>
+              <li><%= link_to "Settings", '#' %></li>
+              <li class="divider"></li>
+              <li><%= link_to "Log out", logout_path, method: :delete %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "ログイン", login_path, class:"header-list" %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <p>現在このアプリケーションには、以下の機能が備わっています。</p>
+  <h1>TaskApp</h1>
+  <p>
+    TaskAppは簡易ToDo管理ツールです。</p>
+  <p>初めてのご利用↓↓</p>
 
   <ul>
     <li>ルートURLに対応したトップページ（このページです）</li>
