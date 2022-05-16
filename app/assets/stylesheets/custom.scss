@@ -34,6 +34,7 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  font-style: italic;
 }
 
 h2 {
@@ -82,6 +83,17 @@ p {
   font-weight: bold;
   text-decoration: none;
 }
+
+#top-main {
+  background-color: transparent;
+}
+
+#top-main-title {
+  font-weight: bold;
+}
+
+
+
 
 /* デバッグウインドウ */
 

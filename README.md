@@ -43,7 +43,9 @@ $ rails server
 * **email** : sample@email.com
 * **password** : password
 * 
-2022.5.9 git init OK
-2022.5.9 Git(SSHでpush)
-2022.5.11 top-pageブランチ
+22.5.9 git init OK
+22.5.9 Git(SSHでpush)
+22.5.11 top-pageブランチ
+22.5.12 B5までOK、git commit,git merge済。
+22.5.16 Bを一旦終了。mergeする。
 

@@ -1,55 +1,29 @@
 <% provide(:title, "Top") %>
-<div class="jumbotron">
- <header class="nav navbar navbar-fixed-top navbar-default" id="header">
-  <div class="container">
-    <%= link_to "Task App", root_path, id:"logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "トップ", root_path, class:"header-list" %></li>
-        <% if logged_in? %>
-          <li><%= link_to "Users", '#', class:"header-list" %></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle header-list" data-toggle="dropdown">
-              Account <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu navbar-default">
-              <li><%= link_to "Show", current_user %></li>
-              <li><%= link_to "Settings", '#' %></li>
-              <li class="divider"></li>
-              <li><%= link_to "Log out", logout_path, method: :delete %></li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to "ログイン", login_path, class:"header-list" %></li>
-        <% end %>
-      </ul>
-    </nav>
+<div class="container">
+  <div class="col-md-7">
+    <div class="center jumbotron" id="top-main">
+      <h1 id="top-main-title">TaskApp</h1>
+        <p>TaskAppは簡易ToDo管理ツールです。</p>
+        <p>↓↓初めてのご利用↓↓</p>        
+          <%= link_to "アカウント作成", "signup_path", class: "btn btn-lg btn-success" %>
+      </div>
+    </div>
+    
+  <div class="col-md-4">
+    <h1>ログイン</h1>
+    <%= form_with(model: @user, local:true) do |f| %>
+      <%= f.label :"メールアドレス", class: "label-login" %>
+      <%= f.email_field :email, class: 'form-control',  disabled: true %>
+        
+      <%= f.label :"パスワード", class: "label-login" %>
+      <%= f.password_field :password, class: 'form-control',  disabled: true %>
+      
+      <label class="checkbox inline checkbox-login" for="remember-me">
+          <input name="session[remember_me]" type="hidden" value="0"><input id="remember-me" type="checkbox" value="1" name="session[remember_me]">
+          <span>ログイン情報を記憶する</span>
+</label>
+      
+      <%= f.submit "ログイン", class: "btn btn-primary btn-block btn-signup" %>
+      <% end %>
   </div>
-</header>
-
-  <h1>TaskApp</h1>
-  <p>
-    TaskAppは簡易ToDo管理ツールです。</p>
-  <p>初めてのご利用↓↓</p>
-
-  <ul>
-    <li>ルートURLに対応したトップページ（このページです）</li>
-    <li>ユーザー機能
-      <ol>
-        <li>名前・メールアドレス・パスワード・ログイン認証用のカラムを持ったUserモデル</li>
-        <li>ユーザー新規登録と対応したページ</li>
-      </ol>
-    </li>
-    <li>ログイン機能
-      <ol>
-        <li>セッションによる一時的ログイン機能</li>
-        <li>Cookiesによる永続的ログイン機能</li>
-      </ol>
-    </li>
-  </ul>
-  <p>実質【勤怠チュートリアル第７章】までの機能を持ったアプリケーションとなります。</p>
-  <center>
-    <%= link_to "Sign Up", signup_path, class: "btn btn-lg btn-primary" %>
-    <%= link_to "Log In", login_path, class: "btn btn-lg btn-primary" %>
-  </center>
 </div>
